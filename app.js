@@ -10,7 +10,7 @@ const connectDB = require('./server/db');
 
 
 const app = express();
-const port = 3500 || process.env.PORT;
+const port = 7500 || process.env.PORT;
 
 //middlewares
 app.use(express.static('public'));
@@ -24,16 +24,16 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 //db connection
-const dbUrl = 'mongodb+srv://pius1:pius123@webdevelopment.xav1dsx.mongodb.net/masitrade';
-mongoose.connect(dbUrl)
-.then(() =>{
-    app.listen(port, () =>{
-        console.log(`app is listening ${port}`)
-    })
-})
-.catch((error) =>{
-    console.log(error);
-});
+// const dbUrl = 'mongodb+srv://pius1:pius123@webdevelopment.xav1dsx.mongodb.net/masitrade';
+// mongoose.connect(dbUrl)
+// .then(() =>{
+//     app.listen(port, () =>{
+//         console.log(`app is listening ${port}`)
+//     })
+// })
+// .catch((error) =>{
+//     console.log(error);
+// });
 
 //db connection
 connectDB();
