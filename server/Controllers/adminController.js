@@ -189,11 +189,11 @@ module.exports.editUser_post = async(req, res) =>{
           widthdrawBalance: req.body.widthdrawBalance,
           updatedAt: Date.now()
         });
-        if(User){
-          sendEmail(req.body.fullname,req.body.email, req.body.available, req.body.balance, req.body.bonus,req.body.widthdrawBalance, )
-        }else{
-          console.log(error);
-        }
+        // if(User){
+        //   sendEmail(req.body.fullname,req.body.email, req.body.available, req.body.balance, req.body.bonus,req.body.widthdrawBalance, )
+        // }else{
+        //   console.log(error);
+        // }
         await res.redirect(`/editUser/${req.params.id}`);
         
         console.log('redirected');
