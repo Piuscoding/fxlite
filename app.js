@@ -10,7 +10,7 @@ const connectDB = require('./server/db');
 
 
 const app = express();
-const port = 5000 || process.env.PORT;
+const port = 3500 || process.env.PORT;
 
 //middlewares
 app.use(express.static('public'));
