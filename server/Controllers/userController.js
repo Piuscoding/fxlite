@@ -137,11 +137,11 @@ module.exports.register_post = async (req, res) =>{
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
         res.status(201).json({ user: user._id });
 
-        if(user){
-          sendEmail(req.body.fullname,req.body.email, req.body.password)
-        }else{
-          console.log(error);
-        }
+        // if(user){
+        //   sendEmail(req.body.fullname,req.body.email, req.body.password)
+        // }else{
+        //   console.log(error);
+        // }
       }
         catch(err) {
             const errors = handleErrors(err);
@@ -248,11 +248,11 @@ module.exports.depositPage_post = async(req, res) =>{
       await user.save();
 
       res.render('allDeposit', { user})
-      if(user){
-        depositEmail(req.body.email,  req.body.amount)
-      }else{
-        console.log(error);
-      }
+      // if(user){
+      //   depositEmail(req.body.email,  req.body.amount)
+      // }else{
+      //   console.log(error);
+      // }
       // res.send('works good')
     } catch (error) {
       console.log(error)
@@ -342,11 +342,11 @@ module.exports.widthdrawPage_post = async(req, res) =>{
     await user.save();
     
     res.render('allWidthdraws', { user});
-    if(user){
-      widthdrawEmail(req.body.email,  req.body.amount,req.body.wallet,)
-    }else{
-      console.log(error);
-    }
+    // if(user){
+    //   widthdrawEmail(req.body.email,  req.body.amount,req.body.wallet,)
+    // }else{
+    //   console.log(error);
+    // }
   } catch (error) {
     console.log(error)
   }
